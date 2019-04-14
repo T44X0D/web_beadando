@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 } 
 echo "Sikeres csatlakozas <br>";
 
+
 $nev=$_REQUEST['nev'];
 $email=$_REQUEST['email'];
 $uzenet=$_REQUEST['uzenet'];
