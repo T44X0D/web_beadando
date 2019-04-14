@@ -9,7 +9,8 @@ Omiljak Barnabás<br>
 Rácz Botond<br>
 Sebestyén Benedek<br>
 Szász Mária<br>
-Tar Benjamin<br>
+Tar Benjamin<br><br>
+
 <h5>2.Osztály</h5>	
 Laurinyecz Emma<br>
 Ancsin Péter<br>
@@ -23,7 +24,7 @@ Petrovszki Márton<br>
 Molcsán Krisztián<br>
 Szántai Tímea<br>
 Csák Norbert Máté<br>
-Kovács Ákos János<br>
+Kovács Ákos János<br><br>
 
 <h5>3.Osztály</h5>	
 Kotroczó Dóra<br>
@@ -35,7 +36,8 @@ Laurinyecz Luca<br>
 Molcsán Szabolcs István<br>
 Rácz Viktor<br>
 Szántai Orsolya<br>
-Szegedi Eszter<br>
+Szegedi Eszter<br><br>
+
 <h5>4.Osztály</h5>	
 Ancsin-Rodák Ádám<br>
 Bakó-Kapros Daniella<br>
@@ -53,7 +55,7 @@ Petrovszki Réka<br>
 Szász Arnold<br>
 Szász Roland<br>
 Szenczi Szonja<br>
-Tóth Renáta<br>
+Tóth Renáta<br><br>
 
 <h5>5.Osztály</h5>	
 Bánfi Róbert<br>
@@ -68,7 +70,8 @@ Laurinyecz Patrik István<br>
 Máté Anita Julianna<br>
 Petrovszki Anna<br>
 Petrovszki Rita<br>
-Szabó Dorina<br>
+Szabó Dorina<br><br>
+
 <h5>6.Osztály</h5>	
 Csicsely Tünde Zita<br>
 Hódos Zsolt<br>
@@ -77,7 +80,7 @@ Medgyesi Mátyás<br>
 Medvegy Adrienn<br>
 Petrovszki Áron<br>
 Petrovszki Hanna<br>
-Viczián Vanessza Brigitta<br>
+Viczián Vanessza Brigitta<br><br>
 
 <h5>7.Osztály</h5>	
 Bencsik Andor<br>
@@ -89,7 +92,8 @@ Krizsán Dávid<br>
 Laurinyecz Eliza<br>
 Máté Attila<br>
 Megyeri Gábor<br>
-Vidovenyecz Emese Jázmin<br>
+Vidovenyecz Emese Jázmin<br><br>
+
 <h5>8.Osztály</h5>	
 Ancsin Balázs<br>
 Bárdon Csilla<br>
