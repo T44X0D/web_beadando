@@ -11,13 +11,6 @@
   <div class="jumbotron">
 	  <img src="img/logo.png">
 	  <h1>Szent István Katolikus Óvoda és Általános Iskola Kétsoprony</h1>
-
-      <div class="kereso_navbar" align="right">
-        <form action="https://google.com/search" method="get">
-        <input type="hidden" name="sitesearch" value="http://t44x0d.szakdolgozat.net" />
-        <input type="text" name="googlekereso" placeholder="Kereső.." />
-        </form>
-      </div>
   </div>
   <div id="navbar">
     <ul class="nav nav-pills">
@@ -25,9 +18,16 @@
     <li<?php echo (($oldal == $keres) ? ' class="aktiv"' : '') ?>>
     <a class="nav-link" href="<?php echo ($url == '/') ? '.' : ('?oldal=' . $oldal['fajl'])?>"><?php echo $oldal['szoveg'] ?></a>
     </li>
+   
     <?php } ?>
     </ul>
   </div>
+  <div class="kereso_navbar" align="right">
+        <form action="https://google.com/search" method="get">
+        <input type="hidden" name="sitesearch" value="http://t44x0d.szakdolgozat.net" />
+        <input type="text" name="googlekereso" placeholder="Kereső.." />
+        </form>
+      </div>
   <div id="content">
     <?php
     include("oldal/{$keres['fajl']}.tpl.php");
