@@ -23,11 +23,10 @@ else{
 
 }
 ?>
-
 <body>
 <div align="center" class="container" id="main-content">
-
-<form action="oldal/kapcsolat_kapcsolat.tpl.php" method="post">
+<?php if (isset($errorMsg)) { echo "<p class='message'>" .$errorMsg. "</p>" ;} ?>
+<form name="RegForm" action="oldal/kapcsolat_kapcsolat.tpl.php" onsubmit="return UZENET()" method="post">
 
 <h2>Kapcsolat</h2>
         <p>
@@ -49,7 +48,7 @@ else{
     </div>
 </div>
     <div class="row">
-                <div class="col-sm-6 form-group">
+                <div class="col-sm-12 form-group">
                     <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs">Küldés! </button>
                 </div>
             </div>
@@ -60,3 +59,44 @@ else{
 	<a href="oldal/uzenetek.php" target="_blank">Beérkezett üzenetek</a>
 </div>
 </body>
+
+<script> 
+function UZENET()                                    
+{ 
+    var name = document.forms["RegForm"]["nev"];               
+    var email = document.forms["RegForm"]["email"];    
+   
+    if (name.value == "")                                  
+    { 
+        window.alert("Kérjük adja meg a nevét!"); 
+        name.focus(); 
+        return false; 
+    } 
+       
+    if (email.value == "")                                   
+    { 
+        window.alert("Kérjük adjon meg valós email címet!"); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Kérjük adjon meg valós email címet!"); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Kérjük adjon meg valós email címet!"); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    return true; 
+}</script> 
+
+
+
+

@@ -37,6 +37,6 @@
 </div>
 </body>
 <footer>
-<div id="footer">T44X0D &copy; <?php print date("Y");?>  <a href="http://www.sztistvan-ketsoprony.hu/">Az iskola eredeti honlapja</a></div>
+<div align="center" id="footer">T44X0D &copy; <?php print date("Y");?>  <a href="http://www.sztistvan-ketsoprony.hu/">Az iskola eredeti honlapja</a></div>
 </footer>
 </html>

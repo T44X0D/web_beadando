@@ -32,4 +32,8 @@ while($row = mysqli_fetch_array($result)) {
 echo "</table>";
 mysqli_close($conn);
 ?>
+<br>
+ <form>
+<input type="button" value="Vissza" onclick="window.location.href='http://www.t44x0d.szakdoga.net'" />
+</form> 
 </html>
