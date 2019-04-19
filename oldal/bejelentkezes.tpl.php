@@ -53,10 +53,11 @@
                     <button type="submit" class="btn btn-lg btn-success btn-block" value="Login">Bejelentkezés </button>
 										</div>   
 		 </div> 
-		 <p>Nem vagy tag? Regisztrálj! <a href="/index.php?oldal=regisztracio">Regisztálás</a>.</p>
+		 
 			
 		 </div>   
 		 </div>  
+         <p>Nem vagy tag? Regisztrálj! <a href="/index.php?oldal=regisztracio">Regisztálás</a>.</p>
          </form>  	 
 </body>
 </html>

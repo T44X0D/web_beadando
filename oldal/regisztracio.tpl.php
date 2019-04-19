@@ -29,13 +29,14 @@ else{
 <div align="center" class="container" id="main-content">
 <?php if (isset($errorMsg)) { echo "<p class='message'>" .$errorMsg. "</p>" ;} ?>
 
-<form iname="RegForm2" action="oldal/regisztracio_kapcsolat.tpl.php" onsubmit="return REGI()" method="post" >	
+<form name="Re" action="oldal/regisztracio_kapcsolat.tpl.php" onsubmit="return R()" method="post" >	
+
 <div class="row">
                 <div class="col-sm-12 form-group">
 Felhasználó név:<br>
 <input type="text" name="username" /><br>
-
-
+</div>
+</div>
 <div class="row">
                 <div class="col-sm-12 form-group">
 Vezetéknév:<br>
@@ -72,18 +73,18 @@ Jelszó:<br>
 </html>
 
 <script> 
-function REGI()                                    
+function R()                                    
 { 
-    var username = document.forms["RegForm2"]["username"];   
-    var vezeteknev = document.forms["RegForm2"]["vezeteknev"];  
-    var keresztnev = document.forms["RegForm2"]["keresztnev"];              
-    var email = document.forms["RegForm2"]["email"];  
-    var password = document.forms["RegForm2"]["password"];    
+    var uname = document.forms["Re"]["username"];   
+    var vezeteknev = document.forms["Re"]["vezeteknev"];  
+    var keresztnev = document.forms["Re"]["keresztnev"];              
+    var email = document.forms["Re"]["email"];  
+    var password = document.forms["Re"]["password"];    
    
-    if (username.value == "")                                  
+    if (uname.value == "")                                  
     { 
         window.alert("Kérjük adja meg az usernevét!"); 
-        name.focus(); 
+        uname.focus(); 
         return false; 
     } 
     if (vezeteknev.value == "")                                  
@@ -122,8 +123,8 @@ function REGI()
     { 
         window.alert("Kérjük adjon meg jelszót"); 
         password.focus(); 
-        return flase; 
+        return false; 
     } 
-   window.alert("Sikres regisztáció!")
+   window.alert("Sikres regisztáció!");
     return true; 
 }</script> 
