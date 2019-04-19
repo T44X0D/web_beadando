@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Sikertelen csatlakozas: " . $conn->connect_error);
 } 
-/*echo "Sikeres csatlakozas <br>";*/
+echo "Sikeres csatlakozas <br>";
 
 $felhasznalonev=$_REQUEST['username'];
 $jelszo=$_REQUEST['password'];
@@ -29,5 +29,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header('Location: http://www.t44x0d.szakdoga.net/?oldal=regisztracio');
+header('Location: http://www.t44x0d.szakdoga.net/?oldal=bejelentkezes');
 ?>

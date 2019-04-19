@@ -1,41 +1,68 @@
 
+<?php
+if(isset($_POST['submit'])){
+
+  $nev=trim($_POST["username"]);
+  $email=trim($_POST["email"]);
+
+  if($nev =="") {
+    $errorMsg=  "error : You did not enter a name.";
+    $code= "1" ;
+  }
+  elseif($email == ""){
+    $errorMsg=  "error : You did not enter a email.";
+    $code= "3";
+} //check for valid email 
+elseif(!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)){
+  $errorMsg= 'error : You did not enter a valid email.';
+  $code= "3";
+}
+else{
+  echo "Success";
+
+}
+
+}
+?>
 <html>
 <body>
 <div align="center" class="container" id="main-content">
-<form iname="RegForm" d="reg" action="oldal/regisztracio_kapcsolat.php" onsubmit="return REG()" method="post" enctype="multipart/form-data">	
+<?php if (isset($errorMsg)) { echo "<p class='message'>" .$errorMsg. "</p>" ;} ?>
+
+<form iname="RegForm2" action="oldal/regisztracio_kapcsolat.tpl.php" onsubmit="return REGI()" method="post" >	
 <div class="row">
                 <div class="col-sm-12 form-group">
 Felhasználó név:<br>
-<input type="text" name="username" id="username" value="" /><br>
+<input type="text" name="username" /><br>
 
 
 <div class="row">
                 <div class="col-sm-12 form-group">
 Vezetéknév:<br>
-<input type="text" name="vezeteknev" id="vezeteknev" value="" /><br>
+<input type="text" name="vezeteknev" /><br>
 </div>
 </div>
 <div class="row">
                 <div class="col-sm-12 form-group">
 Keresztnév:<br>
-<input type="text" name="keresztnev" id="keresztnev" value="" /><br>
+<input type="text" name="keresztnev" /><br>
 </div>
 </div>
 <div class="row">
                 <div class="col-sm-12 form-group">
 Email cím:<br>
-<input type="text" name="email" id="email" value="" /><br>
+<input type="text" name="email" /><br>
 </div>
 </div>
 <div class="row">
                 <div class="col-sm-12 form-group">
 Jelszó:<br>
-<input type="password" name="password" id="password" value="" /><br>
+<input type="password" name="password" /><br>
 </div>
 </div>
 <div class="row">
                 <div class="col-sm-12 form-group">
-                    <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs">Regisztráció </button>
+                    <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs">Regisztráció! </button>
                 </div>
             </div>
             <p>Már tag vagy? Lépj be! <a href="/index.php?oldal=bejelentkezes">Bejelentkezés</a>.</p>
@@ -45,15 +72,15 @@ Jelszó:<br>
 </html>
 
 <script> 
-function REG()                                    
+function REGI()                                    
 { 
-    var username = document.forms["RegForm"]["username"];   
-    var vezeteknev = document.forms["RegForm"]["vezeteknev"];  
-    var keresznev = document.forms["RegForm"]["keresztnev"];              
-    var email = document.forms["RegForm"]["email"];  
-    var jelszo = document.forms["RegForm"]["jelszo"];    
+    var username = document.forms["RegForm2"]["username"];   
+    var vezeteknev = document.forms["RegForm2"]["vezeteknev"];  
+    var keresztnev = document.forms["RegForm2"]["keresztnev"];              
+    var email = document.forms["RegForm2"]["email"];  
+    var password = document.forms["RegForm2"]["password"];    
    
-    if (name.value == "")                                  
+    if (username.value == "")                                  
     { 
         window.alert("Kérjük adja meg az usernevét!"); 
         name.focus(); 
@@ -97,6 +124,6 @@ function REG()
         password.focus(); 
         return flase; 
     } 
-   
+   window.alert("Sikres regisztáció!")
     return true; 
 }</script> 

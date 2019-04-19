@@ -1,41 +1,38 @@
 <?php
-session_start();
- 
-require_once('/bejelentkezo_kapcsolat.php');
- 
-//if user is logged in redirect to myaccount page
-if (isset($_SESSION['id'])) {
-    header('Location: /index.php?oldal=profil');
-}
- 
-$error_message = '';
-if (isset($_POST['submit'])) {
- 
-    extract($_POST);
- 
-    if (!empty($email) && !empty($password)) {
-        $sql = "SELECT id, status FROM users WHERE email = '".$conn->real_escape_string($email)."' AND password = '".md5($conn->real_escape_string($password))."'";
-        $result = $conn->query($sql);
- 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            if($row['status']) {
-                $_SESSION['id'] = $row['id'];
-                header('Location: /index.php?oldal=profil');
-            } else {
-                $error_message = 'Your account is not active yet.';
-            }
-        } else {
-            $error_message = 'Incorrect email or password.';
-        }
-    }
-}
+   include("bejelentkezo_kapcsolat.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $myusername = mysqli_real_escape_string($db,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      
+      $sql = "SELECT id FROM felhasznalok WHERE username = '$myusername' and password = '$mypassword'";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: welcome.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
 ?>
 
 
 <html>
 <body>
 <div align="center" class="container" id="main-content">
+
 	  <div class = "container">
 		<form action="" method="post">
             <div class="form-group" method="post" enctype="multipart/form-data">
@@ -57,8 +54,9 @@ if (isset($_POST['submit'])) {
 										</div>   
 		 </div> 
 		 <p>Nem vagy tag? Regisztrálj! <a href="/index.php?oldal=regisztracio">Regisztálás</a>.</p>
-			</form>
+			
 		 </div>   
-		 </div>    	 
+		 </div>  
+         </form>  	 
 </body>
 </html>

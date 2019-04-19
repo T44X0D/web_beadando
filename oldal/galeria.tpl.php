@@ -25,7 +25,7 @@
 
             // Location
             $location = "img/gal/".$filename;
-            $thumbnail_location = "img/gal/thumbnail/".$filename;
+            $thumbnail_location = "img/gal/".$filename;
 
             // file extension
             $file_extension = pathinfo($location, PATHINFO_EXTENSION);
@@ -70,7 +70,7 @@
         <!-- Upload form -->
         <form method='post' action='' enctype='multipart/form-data'>
             <input type='file' name='imagefiles' >
-            <input type='submit' value='Upload' name='upload'>    
+            <input type='submit' value='Feltöltés' name='upload'>    
         </form>
 		
 		<!--Megjelenítő-->
@@ -94,7 +94,7 @@
                         if($file != '' && $file != '.' && $file != '..'){
                             
                             // Thumbnail image path
-                            $thumbnail_path = "img/gal/thumbnail/".$file;
+                            $thumbnail_path = "img/gal/".$file;
 
                             // Image path
                             $image_path = "img/gal/".$file;
@@ -142,6 +142,11 @@
         </script>
 </div>
     </body>
-    <br>
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    <footer>
+    <div class="footer">
+ 
+    </div>
+    </footer>
 </html>
 
