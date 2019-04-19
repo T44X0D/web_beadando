@@ -11,7 +11,8 @@ $oldalak = array(
     'elerhetoseg' => array('fajl' => 'elerhetoseg', 'szoveg' => 'Elérhetőség'),
 	'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat'),
 	'bejelentkezes' => array('fajl' => 'bejelentkezes', 'szoveg' => 'Bejelentkezés'),
-	'regisztracio' => array('fajl' => 'regisztracio', 'szoveg' => 'Regisztráció')   
+	'regisztracio' => array('fajl' => 'regisztracio', 'szoveg' => 'Regisztráció') 
+
 );
 
 $hiba_oldal = array ('fajl' => '404', 'szoveg' => 'A keresett oldal nem található');

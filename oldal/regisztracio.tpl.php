@@ -1,3 +1,4 @@
+
 <html>
 <body>
 <div align="center" class="container" id="main-content">
@@ -37,6 +38,7 @@ Jelszó:<br>
                     <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs">Regisztráció </button>
                 </div>
             </div>
+            <p>Már tag vagy? Lépj be! <a href="/index.php?oldal=bejelentkezes">Bejelentkezés</a>.</p>
 </form>
 </div>
 </body>

@@ -1,13 +1,16 @@
 <!doctype html>
 <html>
     <head>
-        <!-- CSS -->
-        <link href='oldal/photobox/photobox.css' rel='stylesheet' type='text/css'>
-        <link href='oldal/galeria.style.css' rel='stylesheet' type='text/css'>
+   
+     <!-- CSS -->
+    <link href='/oldal/photobox/photobox.css' rel='stylesheet' type='text/css'>
+       <link href='/oldal/galeria.style.css' rel='stylesheet' type='text/css'> 
+        
+      
 
         <!-- Script -->
-        <script src='oldal/jquery-3.3.1.js' type='text/javascript'></script> 
-        <script type="text/javascript" src="oldal/photobox/jquery.photobox.js"></script>
+        <script src='/oldal/jquery-3.3.1.js' type='text/javascript'></script> 
+        <script type="text/javascript" src="/oldal/photobox/jquery.photobox.js"></script>
     </head>
     <body>
     <div class='container'>
