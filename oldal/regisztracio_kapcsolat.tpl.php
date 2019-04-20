@@ -15,12 +15,11 @@ echo "Sikeres csatlakozas <br>";
 
 $felhasznalonev=$_REQUEST['username'];
 $jelszo=$_REQUEST['password'];
-$jelszo_md5=md5($jelszo);
 $email=$_REQUEST['email'];
 $vezeteknev=$_REQUEST['vezeteknev'];
 $keresztnev=$_REQUEST['keresztnev'];
 
-$sql = "INSERT INTO felhasznalok (username, password, email, vezeteknev, keresztnev) VALUES ('$felhasznalonev', '$jelszo_md5', '$email', '$vezeteknev', '$keresztnev')";
+$sql = "INSERT INTO felhasznalok (username, password, email, vezeteknev, keresztnev) VALUES ('$felhasznalonev', '$jelszo', '$email', '$vezeteknev', '$keresztnev')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Sikeres regisztracio";

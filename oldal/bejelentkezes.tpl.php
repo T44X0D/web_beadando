@@ -3,14 +3,10 @@
 // Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: profil.tpl.php");
-    exit;
-}
+
  
 // Include config file
-require_once "bejelentkezo_kapcsolat.php";
+require_once "kapcsolat.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -55,20 +51,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
+                        if($password == $hashed_password){
                             // Password is correct, so start a new session
                             session_start();
                             
                             // Store data in session variables
-                            $_SESSION["loggedin"] = true;
+                            $_SESSION["Login"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location: /oldal/profil.tpl.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
+                            $password_err = "The password you entered was not valid.$hashed_password $hashed_password = $password";
                         }
                     }
                 } else{
@@ -95,8 +91,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div align="center" class="container" id="main-content">
 
 	  <div class = "container">
-		<form name="R" onsubmit="return Ro()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group" method="post" enctype="multipart/form-data">
+		<form name="R"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>" method="post" enctype="multipart/form-data">
 		            <div class="row">
                       <div class="col-sm-12 form-group">
 				            Felhasználó név:<br>
@@ -107,13 +103,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                    <div class="row">
 		                <div class="col-sm-12 form-group">
 				            Jelszó:<br>
-				            <input type="password" name="password" id="password" value="" />
+				            <input type="password" name="password" id="password" value="<?php echo $password; ?>" />
                         <span class="help-block"><?php echo $password_err; ?></span><br><br>
 				          </div>   
 		            </div> 
 		             <div class="row">
                       <div class="col-sm-12 form-group">
-                        <button type="submit" class="btn btn-lg btn-success btn-block" value="Login">Bejelentkezés </button>
+                        <button type="submit" class="btn btn-lg btn-success btn-block" name="Login" value="Login">Bejelentkezés </button>
 					      </div>   
 		             </div> 
 		      </div>  

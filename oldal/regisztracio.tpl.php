@@ -1,35 +1,10 @@
 
-<?php
-if(isset($_POST['submit'])){
-
-  $nev=trim($_POST["username"]);
-  $email=trim($_POST["email"]);
-
-  if($nev =="") {
-    $errorMsg=  "error : You did not enter a name.";
-    $code= "1" ;
-  }
-  elseif($email == ""){
-    $errorMsg=  "error : You did not enter a email.";
-    $code= "3";
-} //check for valid email 
-elseif(!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)){
-  $errorMsg= 'error : You did not enter a valid email.';
-  $code= "3";
-}
-else{
-  echo "Success";
-
-}
-
-}
-?>
 <html>
 <body>
 <div align="center" class="container" id="main-content">
 <?php if (isset($errorMsg)) { echo "<p class='message'>" .$errorMsg. "</p>" ;} ?>
 
-<form name="Re" action="oldal/regisztracio_kapcsolat.tpl.php" onsubmit="return R()" method="post" >	
+<form name="Re" action="/oldal/regisztracio_kapcsolat.tpl.php" onsubmit="return R()" method="post" >	
 
 <div class="row">
                 <div class="col-sm-12 form-group">
