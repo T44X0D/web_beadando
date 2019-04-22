@@ -18,16 +18,21 @@
     <li<?php echo (($oldal == $keres) ? ' class="aktiv"' : '') ?>>
     <a class="nav-link" href="<?php echo ($url == '/') ? '.' : ('?oldal=' . $oldal['fajl'])?>"><?php echo $oldal['szoveg'] ?></a>
     </li>
-   
+
     <?php } ?>
-    </ul>
-  </div>
-  <div class="kereso_navbar" align="right">
+    <div class="kereso_navbar" align="right">
         <form action="https://google.com/search" method="get">
         <input type="hidden" name="sitesearch" value="http://t44x0d.szakdolgozat.net" />
         <input type="text" name="googlekereso" placeholder="Kereső.." />
         </form>
       </div>
+      <?php
+	    if($_SESSION['Login']) echo $username;
+	    else echo "";
+	?> 
+    </ul>
+  </div>
+
   <div id="content">
     <?php
     include("oldal/{$keres['fajl']}.tpl.php");

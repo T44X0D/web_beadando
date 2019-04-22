@@ -54,7 +54,7 @@ else{
             </div>
 
     </form>   
-	
+	<!--<a href="profil.php"> Vissza a saját profilra</a>-->
 	<br><br>
 	<a href="oldal/uzenetek.php" target="_blank">Beérkezett üzenetek</a>
 </div>

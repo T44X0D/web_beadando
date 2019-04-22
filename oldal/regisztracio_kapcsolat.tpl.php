@@ -28,5 +28,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header('Location: http://www.t44x0d.szakdoga.net/?oldal=bejelentkezes');
+header('Location: http://www.t44x0d.szakdoga.net/oldal/bejelentkezes.tpl.php');
 ?>

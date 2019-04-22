@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if(mysqli_stmt_fetch($stmt)){
                         if($password == $hashed_password){
                             // Password is correct, so start a new session
-                            session_start();
+                            session_start('Login');
                             
                             // Store data in session variables
                             $_SESSION["Login"] = true;
@@ -61,10 +61,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: /oldal/profil.tpl.php");
+                            header("Location: http://www.t44x0d.szakdoga.net/oldal/profil.tpl.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.$hashed_password $hashed_password = $password";
+                            $password_err = "The password you entered was not valid.";
                         }
                     }
                 } else{
